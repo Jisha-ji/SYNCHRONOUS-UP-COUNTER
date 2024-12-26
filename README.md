@@ -8,8 +8,6 @@ To implement 4 bit synchronous up counter and validate functionality.
 
 Quartus prime
 
-**THEORY**
-
 **4 bit synchronous UP Counter**
 
 If we enable each J-K flip-flop to toggle based on whether or not all preceding flip-flop outputs (Q) are “high,” we can obtain the same counting sequence as the asynchronous circuit without the ripple effect, since each flip-flop in this circuit will be clocked at exactly the same time:
@@ -28,19 +26,46 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
+
+**Truthtable**
+
+
+![image](https://github.com/user-attachments/assets/86b5fe29-db62-4859-90c9-318baf04d6ab)
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
-*/
-
+Developed by: Jisha Bossne SJ RegisterNumber:24900154
+```
+module ex11(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out+1;
+end
+endmodule
+```
 **RTL LOGIC UP COUNTER**
 
-**TIMING DIAGRAM FOR IP COUNTER**
+![image](https://github.com/user-attachments/assets/ac334dfe-b51b-4b25-a5a0-d09138792173)
 
-**TRUTH TABLE**
+**TIMING DIAGRAM FOR UP COUNTER**
+
+![image](https://github.com/user-attachments/assets/f8ebbdaa-a91c-44c8-b1e1-e3b45ed16bac)
 
 **RESULTS**
+4 bit Synchronous Up Counter and validate functionality is verified.
